@@ -1,0 +1,10 @@
+html, body, #root {
+    height: 100%;
+}
+
+.horizontal-row{
+    height: 1px;
+    border:none;
+    background-color:#585858;
+    margin: 10px 0px 20px 0px;
+}

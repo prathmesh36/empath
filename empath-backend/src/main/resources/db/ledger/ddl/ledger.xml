@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd
+      http://www.liquibase.org/xml/ns/pro
+      http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd">
+    <changeSet  author="standard"  id="ledger_ddl_v1">
+        <createTable tableName="LEDGER">
+            <column name="ENTRY_ID"  type="VARCHAR(100)">
+                <constraints  nullable="false"  primaryKey="true"  unique="true"/>
+            </column>
+            <column  name="USER_ID"  type="VARCHAR(100)">
+                <constraints  nullable="false"/>
+            </column>
+            <column  name="DEBIT_CREDIT"  type="VARCHAR(1)">
+                <constraints  nullable="false"/>
+            </column>
+            <column  name="DEBIT_CREDIT_TYPE"  type="VARCHAR(100)">
+                <constraints  nullable="false"/>
+            </column>
+            <column  name="DEBIT_CREDIT_REFERENCE"  type="VARCHAR(100)">
+                <constraints  nullable="false"/>
+            </column>
+            <column  name="DEBIT_CREDIT_POINTS"  type="INT">
+                <constraints  nullable="false"/>
+            </column>
+            <column  name="CREATED_TIMESTAMP"  type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP">
+                <constraints  nullable="false"/>
+            </column>
+        </createTable>
+        <rollback>
+            <dropTable  cascadeConstraints="true" schemaName="EMPATH" tableName="LEDGER"/>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>

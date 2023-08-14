@@ -1,0 +1,67 @@
+export const usersData = [
+  {
+    id: "68bf9f2d-0c41-11ee-ba15-5d7e5ef70441",
+    userName: "mandar1297",
+    userEmail: "mandar1297@gmail.com",
+    userAge: 25,
+    userGender: "Male",
+    userPoints: 15,
+    instagramId: "mmandar100",
+    createdTimestamp: "2023-06-16T12:29:16.000+00:00",
+  },
+  {
+    id: "68bf9f2d-0c41-11ee-ba15-5d7e5ef70442",
+    userName: "prathmesh1297",
+    userEmail: "prathmesh1297@gmail.com",
+    userAge: 25,
+    userGender: "Male",
+    userPoints: 15,
+    instagramId: "prathmesh36",
+    createdTimestamp: "2023-06-16T12:29:16.000+00:00",
+  },
+  {
+    id: "68bf9f2d-0c41-11ee-ba15-5d7e5ef70443",
+    userName: "purva28",
+    userEmail: "purvapd28@gmail.com",
+    userAge: 22,
+    userGender: "Female",
+    userPoints: 15,
+    instagramId: "pu28",
+    createdTimestamp: "2023-06-16T12:29:16.000+00:00",
+  },
+];
+export const usersColumns = [
+  { field: "userName", headerName: "Name", width: 180, editable: true },
+  {
+    field: "userEmail",
+    headerName: "User Email",
+    type: "singlesheet",
+    width: 200,
+    align: "left",
+    headerAlign: "left",
+  },
+  {
+    field: "userAge",
+    headerName: "Age",
+    width: 100,
+    type: "number",
+  },
+  {
+    field: "userGender",
+    headerName: "Gender",
+    width: 100,
+    type: "singlesheet",
+  },
+  {
+    field: "userPoints",
+    headerName: "User Points",
+    width: 100,
+    type: "number",
+  },
+  {
+    field: "instagramId",
+    headerName: "Instagram ID",
+    width: 100,
+    type: "singlesheet",
+  },
+];

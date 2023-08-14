@@ -1,0 +1,13 @@
+
+
+.sign-in-right-input-container{
+ box-shadow: none !important;
+}
+
+.sign-in-form{
+ padding-top:0px !important;
+}
+
+.sign-in-form > main > div{
+ margin-top: 0px!important;
+}

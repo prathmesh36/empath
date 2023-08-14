@@ -1,0 +1,24 @@
+.mode-button-span{
+    display:flex;
+}
+
+.mode-button, .inbox-button{
+    margin-right:10px !important;
+}
+
+
+.mode-icon{
+    margin-left:5px;
+}
+
+.inbox-icon{
+    margin-right:5px;
+}
+
+.menu-buttons{
+    margin-left:10px !important;
+}
+
+.menu-buttons:hover{
+    background-color: rgb(78 85 91 / 45%)  !important;
+}

@@ -1,0 +1,14 @@
+.messaging-wrap-form{
+    display: flex;
+    justify-content: center;
+    width: 95%;
+    /*margin: `${theme.spacing(0)} auto`*/
+}
+
+.messaging-wrap-text {
+    width: 100%;
+}
+
+.messaging-button{
+    /*margin: theme.spacing(1);*/
+}

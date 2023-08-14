@@ -1,0 +1,40 @@
+.modal-image{
+    height:500px;
+}
+
+.modal-image-box {
+    display: flex;
+    justify-content: center;
+}
+
+.modal-image-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.modal-headings{
+    font-weight: 400 !important;
+}
+
+.modal-headings-mobile{
+    font-size:1rem !important;
+}
+
+.modal-headings-mobile > svg{
+    height: 0.75em !important;
+    width: 0.75em !important;
+}
+
+.modal-values{
+    font-weight: 100 !important;
+}
+
+.modal-values-mobile{
+    font-size:1rem !important;
+}
+
+.modal-first-row{
+    margin-top: 40px;
+}

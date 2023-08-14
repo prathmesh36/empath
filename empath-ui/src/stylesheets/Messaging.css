@@ -1,0 +1,41 @@
+.messaging-chatbox-grid{
+    padding-left: 0 !important;
+}
+
+.messaging-vertical-tabs > div{
+    padding: 0 !important;
+}
+
+.messaging-icon{
+    margin-top:3px;
+    margin-right:5px;
+}
+
+.messaging-card{
+    display: flex;
+    justify-content: center;
+}
+
+.messaging-card-width-md{
+    width: 70% !important;
+}
+
+.messaging-card-width-sm{
+    width: 100% !important;
+}
+
+.messaging-vertical-tabs-buttons {
+    display: flex !important;
+    justify-content: start !important;
+    text-align: left !important;
+}
+
+.messaging-vertical-tabs-buttons-sm {
+    padding:0 !important;
+}
+
+.messaging-top-grid{
+    display: flex;
+    justify-content: center;
+    width: 100% !important;
+}

@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "type": "java",
+            "name": "Debug (Launch) with Arguments Prompt",
+            "request": "launch",
+            "mainClass": "org.empath.Main",
+            "args": "${command:SpecifyProgramArgs}",
+            "vmArgs" : "-Dspring.profiles.active=dev"
+        }
+    ]
+}

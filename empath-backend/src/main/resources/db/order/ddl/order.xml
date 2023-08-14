@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd
+      http://www.liquibase.org/xml/ns/pro
+      http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd">
+    <changeSet  author="standard"  id="order_ddl_v1">
+        <createTable tableName="ORDER">
+            <column name="ORDER_ID"  type="VARCHAR(100)">
+                <constraints  nullable="false"  primaryKey="true"  unique="true"/>
+            </column>
+            <column name="EXP_ID"  type="VARCHAR(100)">
+                <constraints  nullable="false"/>
+            </column>
+            <column  name="USER_ID"  type="VARCHAR(100)">
+                <constraints  nullable="false"/>
+            </column>
+            <column  name="TOTAL_COST"  type="INT">
+                <constraints  nullable="false"/>
+            </column>
+            <column  name="TOTAL_QUANTITY"  type="INT">
+                <constraints  nullable="false"/>
+            </column>
+            <column  name="CREATED_TIMESTAMP"  type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP">
+                <constraints  nullable="false"/>
+            </column>
+        </createTable>
+        <addForeignKeyConstraint
+                baseColumnNames="EXP_ID"
+                baseTableName="ORDER"
+                baseTableSchemaName="EMPATH"
+                constraintName="FK_EXPERIENCE_TO_ORDER"
+                onDelete="CASCADE"
+                onUpdate="RESTRICT"
+                referencedColumnNames="EXP_ID"
+                referencedTableName="EXPERIENCE"
+                referencedTableSchemaName="EMPATH"
+                validate="true"/>
+        <addForeignKeyConstraint
+                baseColumnNames="USER_ID"
+                baseTableName="ORDER"
+                baseTableSchemaName="EMPATH"
+                constraintName="FK_USER_TO_ORDER"
+                onDelete="CASCADE"
+                onUpdate="RESTRICT"
+                referencedColumnNames="USER_ID"
+                referencedTableName="USER"
+                referencedTableSchemaName="EMPATH"
+                validate="true"/>
+        <rollback>
+            <dropTable  cascadeConstraints="true" schemaName="EMPATH" tableName="ORDER"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet  author="standard"  id="order_ddl_v2">
+        <sql>
+            ALTER TABLE `ORDER` ADD CONSTRAINT CON_ORDER_TOTAL_COST_MIN CHECK (TOTAL_COST &gt;=0);
+        </sql>
+        <sql>
+            ALTER TABLE `ORDER` ADD CONSTRAINT CON_ORDER_TOTAL_QUANTITY_MIN CHECK (TOTAL_QUANTITY &gt;=0);
+        </sql>
+    </changeSet>
+
+    <changeSet author="standard" id="order_ddl_v3" >
+        <addColumn schemaName= "EMPATH"
+                   tableName="ORDER">
+            <column name="ORDER_ADDRESS"
+                    type="VARCHAR(500)">
+            </column>
+        </addColumn>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd
+      http://www.liquibase.org/xml/ns/pro
+      http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd">
+    <changeSet  author="standard"  id="experience_ddl_v1">
+        <createTable tableName="EXPERIENCE">
+            <column name="EXP_ID"  type="VARCHAR(100)">
+                <constraints  nullable="false"  primaryKey="true"  unique="true"/>
+            </column>
+            <column  name="EXP_NAME"  type="VARCHAR(45)">
+                <constraints  nullable="false"/>
+            </column>
+            <column  name="EXP_DESCRIPTION"  type="VARCHAR(500)">
+                <constraints  nullable="false"/>
+            </column>
+            <column  name="EXP_LOCATION"  type="VARCHAR(200)">
+                <constraints  nullable="false"/>
+            </column>
+            <column  name="EXP_COST"  type="INT">
+                <constraints  nullable="false"/>
+            </column>
+            <column  name="EXP_QUANTITY"  type="INT">
+                <constraints  nullable="false"/>
+            </column>
+            <column  name="CREATED_TIMESTAMP"  type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP">
+                <constraints  nullable="false"/>
+            </column>
+        </createTable>
+        <rollback>
+            <dropTable  cascadeConstraints="true" schemaName="EMPATH" tableName="EXPERIENCE"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet  author="standard"  id="experience_ddl_v2">
+        <sql>
+            ALTER TABLE EXPERIENCE ADD CONSTRAINT CON_EXPERIENCE_EXP_QUANTITY_MIN CHECK (EXP_QUANTITY &gt;=0)
+        </sql>
+    </changeSet>
+
+    <changeSet  author="standard"  id="experience_ddl_v3">
+        <sql>
+            ALTER TABLE EXPERIENCE ADD CONSTRAINT CON_EXPERIENCE_EXP_COST_MIN CHECK (EXP_COST &gt;=0)
+        </sql>
+    </changeSet>
+
+    <changeSet author="standard" id="experience_ddl_v4">
+        <addColumn schemaName= "EMPATH"
+                   tableName="EXPERIENCE">
+            <column afterColumn="EXP_QUANTITY"
+                    name="EXP_DATE"
+                    type="DATE"
+                    defaultValueComputed="NOW()">
+                <constraints nullable="false" />
+            </column>
+        </addColumn>
+    </changeSet>
+
+    <changeSet author="standard" id="experience_ddl_v5">
+        <addColumn schemaName= "EMPATH"
+                   tableName="EXPERIENCE">
+            <column afterColumn="EXP_QUANTITY"
+                    name="EXP_PHOTO_URL"
+                    type="VARCHAR(500)">
+            </column>
+        </addColumn>
+    </changeSet>
+
+</databaseChangeLog>

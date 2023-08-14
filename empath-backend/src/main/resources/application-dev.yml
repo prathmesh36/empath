@@ -1,0 +1,28 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/empath?createDatabaseIfNotExist=true
+    username: standard
+    password: empath
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+  application:
+    name: empath-backend
+  liquibase:
+    change-log: classpath:db/changelog-master.xml
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
+
+instagram:
+  redirect-url: https://great-cat-35.deno.dev/
+  access-token-url: https://api.instagram.com/oauth/access_token
+  data-url: https://graph.instagram.com/
+  media-url: http://localhost:8080/v1/simulator/getInstagramMedias
+  comment-url: http://localhost:8080/v1/simulator/getInstagramComments
+  commented-user-url: http://localhost:8080/v1/simulator/getInstagramCommentedUser
+  non-expiry-token: abc
+
+secret: empath
