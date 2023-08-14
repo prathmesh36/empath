@@ -1,8 +1,8 @@
 # Team TernaryOperator
 The TernaryOperator Project has 3 services:
-1. empath-ui [(Documentation)](https://github.com/DandelionProjects/TernaryOperator/tree/main/empath-ui)
-2. empath-backend [(Documentation)](https://github.com/DandelionProjects/TernaryOperator/tree/main/empath-backend)
-3. empath-admin-ui [(Documentation)](https://github.com/DandelionProjects/TernaryOperator/tree/main/empath-admin-ui)
+1. empath-ui [(Documentation)](https://github.com/prathmesh36/empath/tree/main/empath-ui)
+2. empath-backend [(Documentation)](https://github.com/prathmesh36/empath/tree/main/empath-backend)
+3. empath-admin-ui [(Documentation)](https://github.com/prathmesh36/empath/tree/main/empath-admin-ui)
 
 
 ## Emapth Product Video
