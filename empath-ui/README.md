@@ -4,9 +4,7 @@
 
 <!-- #default-branch-switch -->
 
-The project enables users to leverage their social media interaction and purchase history with different brands.
-The user gains points for the above activities and it can redeem experiences of their choice by using the collected points.
-The project is designed in a way to onboarded any clients with very less code change.
+The project enables users to leverage their social media interaction and purchase history with different brands (clients) onboarded to the portal. The user gains points for the above activities and it can redeem experiences of their choice by using the collected points. The project is designed in a way to onboarded any clients with very less code change.
 
 ## About empath-ui
 
